@@ -4,3 +4,6 @@ node_modules/
 ## ignore generated JavaScript files
 functions/**/*.js
 functions/**/*.js.map
+
+# hosting files
+.firebase/
