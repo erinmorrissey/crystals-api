@@ -1,8 +1,23 @@
 import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
+// initialize the Cloud Firestore SDK
+admin.initializeApp(functions.config().firebase);
+
+const db = admin.firestore();
+const data = [];
+
 export const helloWorld = functions.https.onRequest((request, response) => {
- response.send("Helloooo Erin from Firebase!");
+  db.collection('crystals').get()
+    .then((snapshot) => {
+      console.log('Snapshot: ', snapshot);
+      snapshot.forEach((doc) => {
+        data.push(doc.data());
+        console.log(doc.id, '=>', doc.data());
+      });
+      response.send(data);
+    })
+    .catch((err) => {
+      console.log('Error getting Firestore data', err);
+    });
 });
