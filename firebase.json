@@ -15,8 +15,12 @@
     ],
     "rewrites": [
       {
-        "source": "/hello",
-        "function": "helloWorld"
+        "source": "/health",
+        "function": "healthCheck"
+      },
+      {
+        "source": "/crystals",
+        "function": "crystals"
       },
       {
         "source": "**",
