@@ -20,7 +20,11 @@
       },
       {
         "source": "/crystals",
-        "function": "crystals"
+        "function": "getCrystals"
+      },
+      {
+        "source": "/crystals/*",
+        "function": "getCrystal"
       },
       {
         "source": "**",
