@@ -1,9 +1,12 @@
-# Dependency directories
+# dependency directories
 node_modules/
 
-## ignore generated JavaScript files
+# generated JavaScript files
 functions/**/*.js
 functions/**/*.js.map
 
 # hosting files
 .firebase/
+
+# logs
+*.log
